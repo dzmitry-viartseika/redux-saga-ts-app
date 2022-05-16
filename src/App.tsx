@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Routes} from 'react-router-dom';
-import BlogPage from "./pages/BlogPage";
+import PeopleListPage from "./pages/PeopleListPage";
 import Page404 from "./pages/Page404";
 import './assets/scss/style.scss'
 
@@ -9,7 +9,7 @@ function App() {
         <>
             <h1>Redux Saga App</h1>
             <Routes>
-                    <Route path='/' element={<BlogPage />} />
+                    <Route path='/' element={<PeopleListPage />} />
                     <Route path='*' element={<Page404 />} />
             </Routes>
         </>

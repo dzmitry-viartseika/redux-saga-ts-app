@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
+import { LOAD_PEOPLE } from '../redux/reducers/people/PeopleActions';
 
-function BlogPage(): JSX.Element {
+function PeopleListPage(): JSX.Element {
     const [vehiclesList, setVehiclesList] = useState<any[]>([]);
     const store = useSelector((store) => store);
     console.log('store', store);
@@ -10,13 +11,13 @@ function BlogPage(): JSX.Element {
 
     useEffect(() => {
         dispatch({
-            type: 'LOAD_BLOG_DATA'
+            type: LOAD_PEOPLE
         });
     }, [])
     return (
         <div>
-            <h1>Blog Page</h1>
+            <h1>BlogPage Page</h1>
         </div>
     )
 }
-export default BlogPage;
+export default PeopleListPage;
