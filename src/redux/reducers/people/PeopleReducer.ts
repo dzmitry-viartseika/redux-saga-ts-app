@@ -25,6 +25,7 @@ export default function peopleReducer(state = initialState, action: PeopleAction
             return {
                 ...state,
                 loading: false,
+                error: null,
                 data: action.payload,
             }
         }
