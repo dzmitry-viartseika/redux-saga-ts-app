@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import {selectUserDetail} from "../redux/selectors/selectors";
 
 function SinglePeoplePage(): JSX.Element {
-    const { id } = useParams();
+    const { id } = useParams<string>();
     const dispatch = useDispatch();
     const userDetail = useSelector(selectUserDetail);
 
