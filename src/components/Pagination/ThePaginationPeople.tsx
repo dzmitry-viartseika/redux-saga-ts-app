@@ -1,7 +1,20 @@
+import React from 'react';
+
+/*
+* Table row limit
+* */
 const LIMIT = 10;
 
-function ThePaginationPeople({total, page, onChange}: any): JSX.Element {
-    const totalPages = Math.ceil(total / LIMIT);
+interface IPaginationProp {
+    total: number;
+    page: number;
+    onChange: (id: number) => void;
+}
+
+function ThePaginationPeople({total, page, onChange}: IPaginationProp): JSX.Element {
+
+    const totalPages: number = Math.ceil(total / LIMIT);
+
     return (
         <>
             {

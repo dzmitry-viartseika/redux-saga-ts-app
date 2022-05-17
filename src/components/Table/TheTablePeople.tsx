@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom';
 function TheTablePeople(): JSX.Element {
     const people = useSelector(selectPeople);
     const dispatch = useDispatch();
-    console.log('people.data.page', people.page);
-    const changePage = (newPage: number) => {
+    const changePage = (newPage: number): void => {
         dispatch({
             type: LOAD_PEOPLE,
             payload: {

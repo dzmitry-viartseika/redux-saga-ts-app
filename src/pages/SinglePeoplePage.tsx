@@ -9,7 +9,6 @@ function SinglePeoplePage(): JSX.Element {
     const { id } = useParams();
     const dispatch = useDispatch();
     const userDetail = useSelector(selectUserDetail);
-    console.log('userDetail', userDetail);
 
     useEffect(() => {
         dispatch({
