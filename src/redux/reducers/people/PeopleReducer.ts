@@ -1,5 +1,7 @@
 import { LOAD_PEOPLE, LOAD_PEOPLE_FAILURE, LOAD_PEOPLE_SUCCESS } from './PeopleActions';
-const initialState = {
+import {IPeopleState, PeopleActions} from '../../../model/people/type';
+
+const initialState: IPeopleState = {
     page: 1,
     search: '',
     loading: false,
@@ -7,11 +9,10 @@ const initialState = {
     data: null,
 };
 
-export default function peopleReducer(state = initialState, action: any) {
-    const { type, payload } = action;
-    switch (type) {
+export default function peopleReducer(state = initialState, action: PeopleActions) {
+    switch (action.type) {
         case LOAD_PEOPLE: {
-            const { page, search } = payload;
+            const { page, search } = action.payload;
             return {
                 ...state,
                 loading: true,
@@ -24,7 +25,7 @@ export default function peopleReducer(state = initialState, action: any) {
             return {
                 ...state,
                 loading: false,
-                data: payload,
+                data: action.payload,
             }
         }
 
@@ -32,7 +33,7 @@ export default function peopleReducer(state = initialState, action: any) {
             return {
                 ...state,
                 loading: false,
-                error: payload,
+                error: action.payload,
             }
         }
 
