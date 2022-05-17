@@ -11,7 +11,10 @@ function PeopleListPage(): JSX.Element {
 
     useEffect(() => {
         dispatch({
-            type: LOAD_PEOPLE
+            type: LOAD_PEOPLE,
+            payload: {
+                page: 1,
+            }
         });
     }, [])
     return (

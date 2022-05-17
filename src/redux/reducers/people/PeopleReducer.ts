@@ -11,12 +11,12 @@ export default function peopleReducer(state = initialState, action: any) {
     const { type, payload } = action;
     switch (type) {
         case LOAD_PEOPLE: {
-            // const { page, search } = payload;
+            const { page, search } = payload;
             return {
                 ...state,
                 loading: true,
-                // page,
-                // search,
+                page,
+                search,
             }
         }
 

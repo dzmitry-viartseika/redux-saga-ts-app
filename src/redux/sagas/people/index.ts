@@ -19,6 +19,7 @@ export function* loadPeopleList({payload}: any): any {
 }
 
 export function* loadPeopleDetails() {
+
 }
 
 export default function* peopleSaga() {
