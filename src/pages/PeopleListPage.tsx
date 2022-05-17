@@ -4,9 +4,6 @@ import {useDispatch, useSelector} from "react-redux";
 import { LOAD_PEOPLE } from '../redux/reducers/people/PeopleActions';
 
 function PeopleListPage(): JSX.Element {
-    const [vehiclesList, setVehiclesList] = useState<any[]>([]);
-    const store = useSelector((store) => store);
-    console.log('store', store);
     const dispatch = useDispatch();
 
     useEffect(() => {

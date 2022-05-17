@@ -1,8 +1,9 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {selectPeople} from "../../redux/selectors/selectors";
-import ThePaginationPeople from "../Pagination/ThePaginationPeople";
 import {LOAD_PEOPLE} from "../../redux/reducers/people/PeopleActions";
+import ThePaginationPeople from '../Pagination/ThePaginationPeople';
+import { Link } from 'react-router-dom';
 
 function TheTablePeople(): JSX.Element {
     const people = useSelector(selectPeople);
@@ -34,6 +35,7 @@ function TheTablePeople(): JSX.Element {
                 <tbody>
                 {
                     people.data && people.data.results.map((item: any) => {
+                        const id = item.url.replaceAll(/\D/g, '');
                         return (
                             <tr key={ item.name }>
                                 <td>{ item.name }</td>
@@ -43,7 +45,9 @@ function TheTablePeople(): JSX.Element {
                                 <td>{ item.hair_color }</td>
                                 <td>{ item.height }</td>
                                 <td>
-                                    <button>Detail</button>
+                                    <Link to={`people/${id}`}>
+                                        <button>Detail</button>
+                                    </Link>
                                 </td>
                             </tr>
                         )

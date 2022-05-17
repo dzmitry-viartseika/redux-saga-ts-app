@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {selectPeople} from "./redux/selectors/selectors";
 import TheTablePeople from './components/Table/TheTablePeople';
 import {LOAD_PEOPLE} from "./redux/reducers/people/PeopleActions";
+import SinglePeoplePage from "./pages/SinglePeoplePage";
 
 function App() {
     const people = useSelector(selectPeople);
@@ -26,6 +27,7 @@ function App() {
             <h1>Redux Saga Star Wars People</h1>
             <Routes>
                     <Route path='/' element={<PeopleListPage />} />
+                    <Route path='/people/:id' element={<SinglePeoplePage />} />
                     <Route path='*' element={<Page404 />} />
             </Routes>
             <form>

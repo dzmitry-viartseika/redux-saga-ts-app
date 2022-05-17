@@ -5,6 +5,7 @@ import App from './App';
 import { Provider } from "react-redux";
 import './assets/scss/style.scss';
 import store from './redux';
+ import { Outlet } from "react-router";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
             <Provider store={store}>
                 <App />
             </Provider>
+            <Outlet />
         </BrowserRouter>
     </React.StrictMode>,
 document.getElementById('root'),
